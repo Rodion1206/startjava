@@ -116,9 +116,9 @@ class VariablesTheme {
 
         System.out.println("10. Преобразование секунд\n");
         int secAmount = 86399;
-        int intHours = secAmount / 3600;
-        int intMinutes = secAmount % 3600 / 60;
-        int intSeconds = secAmount % 3600 % 60;
-        System.out.println("" + intHours + ":" + intMinutes + ":" + intSeconds);
+        int hours = secAmount / 3600;
+        int minutes = secAmount % 3600 / 60;
+        int seconds = secAmount % 3600 % 60;
+        System.out.println("" + hours + ":" + minutes + ":" + seconds);
     }
 }
