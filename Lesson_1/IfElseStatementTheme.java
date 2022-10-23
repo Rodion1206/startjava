@@ -125,31 +125,25 @@ class IfElseStatementTheme {
 
         if (historyProcent <= 60) {
             historyGrade = 2;
-            System.out.println("" + historyGrade + " history");
         } else if ((historyProcent > 60) && (historyProcent <= 73)) {
             historyGrade = 3;
-            System.out.println("" + historyGrade + " history");
         } else if ((historyProcent > 73) && (historyProcent <= 91)) {
             historyGrade = 4;
-            System.out.println("" + historyGrade + " history");
         } else if (historyProcent > 91) {
             historyGrade = 5;
-            System.out.println("" + historyGrade + " history");
         }
 
         if (programmingProcent <= 60) {
             programmingGrade = 2;
-            System.out.println("" + programmingGrade + " programming");
         } else if ((programmingProcent > 60) && (programmingProcent <= 73)) {
             programmingGrade = 3;
-            System.out.println("" + programmingGrade + " programming");
         } else if ((programmingProcent > 73) && (programmingProcent <= 91)) {
             programmingGrade = 4;
-            System.out.println("" + programmingGrade + " programming");
         } else if (programmingProcent > 91) {
             programmingGrade = 5;
-            System.out.println("" + programmingGrade + " programming");
         }
+        System.out.println("" + historyGrade + " history");
+        System.out.println("" + programmingGrade + " programming");
         System.out.println("средний балл оценок по предметам " + (double) ((historyGrade + programmingGrade) / 2));
         System.out.println("средний % по предметам " + (double) ((historyProcent + programmingProcent) / 2));
 
