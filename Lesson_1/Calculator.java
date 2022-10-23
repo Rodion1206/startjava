@@ -5,7 +5,7 @@ class Calculator {
 		int a = 5;
 		int b = 2;
 		int result = 0;
-		double y, z, resultDouble;
+		double resultDouble;
 		char operation = '/';
 
 		if (operation == '+') {
@@ -15,11 +15,9 @@ class Calculator {
 		} else if (operation == '*') {
 			result = a * b;
 		} else if (operation == '/') {
-			y = (double) a;
-			z = (double) b;
-			resultDouble = y / z;
+			resultDouble = (double) a / (double) b;
 		} else if (operation == '^') {
-			result++;
+			result = 1;
 			for (int i = 1; i <= b; i++) {
 				result *= a;	
 			}

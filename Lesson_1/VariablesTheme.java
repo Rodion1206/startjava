@@ -9,7 +9,7 @@ class VariablesTheme {
         float coreFrequency = 2.4F;
         double displayRefreshRate = 60.0;
         char logo = 'F';
-        boolean isHaveRemont = true;
+        boolean isHaveRepair = true;
         System.out.println("Yeats of use - " + yearsOfUse + " years");
         System.out.println("RAM - " + ram + " mb");
         System.out.println("System bit depth - " + systemBitDepth + " bit");
@@ -17,7 +17,7 @@ class VariablesTheme {
         System.out.println("Frequency of core - " + coreFrequency + " GHz");
         System.out.println("Display refresh rate - " + displayRefreshRate + " Hz");
         System.out.println("Logotype - " + logo);
-        System.out.println("Is have remont - " + isHaveRemont + "\n");
+        System.out.println("Is have repair - " + isHaveRepair + "\n");
 
         System.out.println("2. Расчет стоимости товара со скидкой\n");
         double penPrice = 100.0;
