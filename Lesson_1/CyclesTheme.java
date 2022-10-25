@@ -166,11 +166,11 @@ class CyclesTheme {
 		System.out.println("\n\n9. Определение, является ли число счастливым");
 		num = 223322;
 		int hundredsPart1  = (num / 100000) % 10;
-        int tensPart1    = (num / 10000) % 10;
-        int onesPart1     = (num / 1000) % 10;
+        int tensPart1      = (num / 10000) % 10;
+        int onesPart1      = (num / 1000) % 10;
         int hundredsPart2  = (num / 100) % 10;
-        int tensPart2    = (num / 10) % 10;
-        int onesPart2     = num % 10;
+        int tensPart2      = (num / 10) % 10;
+        int onesPart2      = num % 10;
         int sumOfPart1 = hundredsPart1 + tensPart1 + onesPart1;
         int sumOfPart2 = hundredsPart2 + tensPart2 + onesPart2;
         System.out.println(num);
