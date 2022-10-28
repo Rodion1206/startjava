@@ -21,28 +21,9 @@ class CyclesTheme {
 		int a = 10;
 		int b = 5;
 		int c = -1;
-		int min = a;
-		int max = c;
+		int min = c;
+		int max = a;
 
-		if (a < min) {
-			min = a;
-		}
-		if (b < min) {
-			min = b;
-		}
-		if (c < min) {
-			min = c;
-		}
-
-		if (a > max) {
-			max = a;
-		}
-		if (b > max) {
-			max = b;
-		}
-		if (c > max) {
-			max = c;
-		}
 		System.out.println("min = " + min);
 		System.out.println("max = " + max);
 		for (i = max - 1; i > min; i--) {
@@ -62,17 +43,17 @@ class CyclesTheme {
 		System.out.println("\nСумма его цифр - " + sumDigits);
 
 		System.out.println("\n4. Вывод чисел на консоль в несколько строк");
-		int numberCounter = 0;
+		int numbersCounter = 0;
 		for (i = 1; i < 24; i += 2) {
-			if (numberCounter == 5) {
+			if (numbersCounter == 5) {
 				System.out.println();
-				numberCounter = 0;
+				numbersCounter = 0;
 			}
 			System.out.printf("%2s ", i);
-			numberCounter++;
+			numbersCounter++;
 		}
-		if (numberCounter < 5) {
-			for (i = 1; i <= (5 - numberCounter); i++) {
+		if (numbersCounter < 5) {
+			for (i = 1; i <= (5 - numbersCounter); i++) {
 				System.out.printf("%2s ", 0);
 			}
 		}
@@ -113,24 +94,20 @@ class CyclesTheme {
 		}
 		System.out.println();
 
-		countRows = 5;
-		symbolsAmount = 1;
-		do {
-			if (countRows == 1 || countRows == 5) {
-				symbolsAmount = 1;
-			} else if (countRows == 2 || countRows == 4) {
-				symbolsAmount = 2;
-			} else {
-				symbolsAmount = 3;
-			}
-			int symbolCounter = 1;
-			do {
-				System.out.print("$");
-				symbolCounter++;
-			} while (symbolCounter <= symbolsAmount);
-			countRows--;
-			System.out.println();
-		} while (countRows > 0);
+		countRows = 0;
+        int count = 0;
+        do {
+            int elements = 0;
+            do {
+               System.out.print("$");
+            } while (++elements <= countRows);
+            if (++count <= 2) {
+                countRows++;
+            } else {
+                countRows--;
+            }
+            System.out.println();
+        } while (countRows >= 0);
 		
 		System.out.println("\n7. Отображение ASCII-символов");
 		// символы, идущие до цифр и имеющие нечетные коды [0 - 47]
@@ -165,22 +142,22 @@ class CyclesTheme {
 		System.out.println("\n\n9. Определение, является ли число счастливым");
 		num = 223322;
 		int numCopy = num;
-        numberCounter = 0;
-        int sumOfPart1 = 0;
-        int sumOfPart2 = 0;
+        int digitOrder = 0;
+        int sumTopHalf = 0;
+        int sumBottomHalf = 0;
         while (num != 0) {
             int digit = num % 10;
-            if (numberCounter < 3) {
-                sumOfPart1 += digit;
+            if (digitOrder < 3) {
+                sumTopHalf += digit;
             } else {
-                sumOfPart2 += digit;
+                sumBottomHalf += digit;
             }
             num /= 10;
-            numberCounter++;
+            digitOrder++;
         }
-        System.out.printf("Сумма цифр %d = %d", numCopy / 1000, sumOfPart1);
-        System.out.printf("\nСумма цифр %d = %d", numCopy % 1000, sumOfPart2);
-        if (sumOfPart1 == sumOfPart2) {
+        System.out.printf("Сумма цифр %d = %d", numCopy / 1000, sumTopHalf);
+        System.out.printf("\nСумма цифр %d = %d", numCopy % 1000, sumBottomHalf);
+        if (sumTopHalf == sumBottomHalf) {
             System.out.println("\nЧисло является счастливым");
         } else {
             System.out.println("\nЧисло не является счастливым");
@@ -189,12 +166,9 @@ class CyclesTheme {
 		System.out.println("\n10. Вывод таблицы умножения Пифагора");
 		System.out.println("  ТАБЛИЦА      ПИФАГОРА");
 		// отдельно вывести шапку и таблицу
-        for (i = 1; i < 10; i++) {
-            if (i == 1) {
-                System.out.print("__|");
-            } else {
-                System.out.printf("__%d", i);
-            }
+		System.out.print("__|");
+        for (i = 2; i < 10; i++) {
+            System.out.printf("__%d", i);    
         }
         System.out.println();
         for (i = 2; i < 10; i++) {
