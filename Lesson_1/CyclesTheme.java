@@ -21,8 +21,21 @@ class CyclesTheme {
 		int a = 10;
 		int b = 5;
 		int c = -1;
-		int min = c;
-		int max = a;
+		int min = a;
+		int max = b;
+
+		if (a > max) {
+			max = a;	
+		} 
+		if (c > max) {
+			max = c;
+		}
+		if (b < min) {
+			min = b;
+		}
+		if (c < min) {
+			min = c;
+		} 
 
 		System.out.println("min = " + min);
 		System.out.println("max = " + max);
