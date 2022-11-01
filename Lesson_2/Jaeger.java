@@ -1,7 +1,7 @@
 public class Jaeger {
 
-    String modelName;
-    String weapon;
+    private String modelName;
+    private String weapon;
 
     public Jaeger(){
 
@@ -28,20 +28,20 @@ public class Jaeger {
         this.weapon = weapon;
     }
 
-    boolean drift() {
+    public boolean drift() {
         System.out.println("Вы попали в дрифт");
         return true;
     }
 
-    void move() {
+    public void move() {
         System.out.println("Вы прошли 5 шагов");
     }
 
-    String scanKaiju() {
+    public String scanKaiju() {
         return "nothing";
     }
 
-    void attack() {
+    public void attack() {
         System.out.println(modelName + " attack with weapon " + weapon);
     }
 }
