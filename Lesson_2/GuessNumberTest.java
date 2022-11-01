@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class GuessNumberTest {
+    // GuessNumberTest — отвечает за создание объектов, их инициализацию,
+    // запуск игры, ввод и обработку ответа игрока о продолжении/завершении. Содержит метод main
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String userAnswer = "yes";
+        System.out.print("Введите имя первого игрока: ");
+        String playerOneName = scanner.nextLine();
+        System.out.print("Введите имя второго игрока: ");
+        String playerTwoName = scanner.nextLine();
+
+        Player playerOne = new Player(playerOneName);
+        Player playerTwo = new Player(playerTwoName);
+        GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
+
+        do {
+            guessNumber.startGame();
+            do {
+                System.out.print("Хотите продолжить игру? [yes/no]: ");
+                userAnswer = scanner.nextLine();
+                if (userAnswer.equals("yes")) {
+                    break;
+                } else if (userAnswer.equals("no")) {
+                    break;
+                } else {
+                    continue;
+                }
+            } while (true);
+        } while (!userAnswer.equals("no"));
+    }
+}
