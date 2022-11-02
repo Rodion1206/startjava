@@ -1,8 +1,9 @@
 import java.util.Scanner;
 
+// GuessNumberTest — отвечает за создание объектов, их инициализацию,
+// запуск игры, ввод и обработку ответа игрока о продолжении/завершении. Содержит метод main
 public class GuessNumberTest {
-    // GuessNumberTest — отвечает за создание объектов, их инициализацию,
-    // запуск игры, ввод и обработку ответа игрока о продолжении/завершении. Содержит метод main
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String userAnswer = "yes";
@@ -13,10 +14,10 @@ public class GuessNumberTest {
 
         Player playerOne = new Player(playerOneName);
         Player playerTwo = new Player(playerTwoName);
-        GuessNumber guessNumber = new GuessNumber(playerOne, playerTwo);
+        GuessNumber game = new GuessNumber(playerOne, playerTwo);
 
         do {
-            guessNumber.startGame();
+            game.start();
             do {
                 System.out.print("Хотите продолжить игру? [yes/no]: ");
                 userAnswer = scanner.nextLine();
@@ -26,6 +27,6 @@ public class GuessNumberTest {
                     continue;
                 }
             } while (true);
-        } while (!userAnswer.equals("no"));
+        } while (userAnswer.equals("yes"));
     }
 }

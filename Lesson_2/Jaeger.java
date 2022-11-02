@@ -3,9 +3,7 @@ public class Jaeger {
     private String modelName;
     private String weapon;
 
-    public Jaeger(){
-
-    }
+    public Jaeger() {}
 
     public Jaeger(String modelName, String weapon) {
         this.modelName = modelName;
@@ -28,7 +26,7 @@ public class Jaeger {
         this.weapon = weapon;
     }
 
-    public boolean drift() {
+    public boolean isDrift() {
         System.out.println("Вы попали в дрифт");
         return true;
     }

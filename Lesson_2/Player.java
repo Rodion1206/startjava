@@ -1,5 +1,6 @@
+// Player — описывает игроков
 public class Player {
-    // Player — описывает игроков
+
     private String name;
     private int number;
 
@@ -9,10 +10,6 @@ public class Player {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public int getNumber() {
