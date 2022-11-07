@@ -1,28 +1,32 @@
 class Calculator {
 
     //  +, -, *, /, ^, %
-    public double calculate(char operator, int a, int b) {
-        double result = 0;
+    public void calculate(char operator, double a, double b) {
         switch (operator) {
             case '+' :
-                return a + b;
+                System.out.println(a + b);
+                break;
             case '-' :
-                return a - b;
+                System.out.println(a - b);
+                break;
             case '*' :
-                return a * b;
+                System.out.println(a * b);
+                break;
             case '/' :
-                return (double) a / (double) b;
+                System.out.println(a / b);
+                break;
             case '^' :
-                result = 1;
+                double result = 1;
                 for (int i = 1; i <= b; i++) {
                     result *= a;
                 }
-                return result;
+                System.out.println(result);
+                break;
             case '%' :
-                return a % b;
+                System.out.println(a % b);
+                break;
             default:
                 System.out.println("Некорректный оператор");
-                return 0;
         }
     }
 }

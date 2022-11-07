@@ -16,8 +16,9 @@ public class GuessNumber {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Отгадайте загаданное положительное целое число от 1 до 100");
         int hiddenNum = new Random().nextInt(100) + 1;
-        Player currentPlayer = playerOne;
+        Player currentPlayer = playerTwo;
         do {
+            currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
             int playerNum = scanner.nextInt();
             currentPlayer.setNumber(playerNum);
             if (hiddenNum > currentPlayer.getNumber()) {
@@ -26,9 +27,6 @@ public class GuessNumber {
             } else if (hiddenNum < currentPlayer.getNumber()) {
                 System.out.printf("число %d больше того, что загадал компьютер.\n",
                         currentPlayer.getNumber());
-            }
-            if (currentPlayer.getNumber() != hiddenNum) {
-                currentPlayer = currentPlayer == playerOne ? playerTwo : playerOne;
             }
         } while (currentPlayer.getNumber() != hiddenNum);
         System.out.println("Победил " + currentPlayer.getName());
