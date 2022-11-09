@@ -18,7 +18,6 @@ class CalculatorTest {
             }
             System.out.print("Хотите продолжить вычисления? [yes/no]: ");
             userAnswer = scanner.nextLine();
-
         } while (!userAnswer.equals("no"));
     }
 }
